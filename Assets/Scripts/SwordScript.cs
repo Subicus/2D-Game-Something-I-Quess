@@ -3,32 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SwordScript : MonoBehaviour
+
 {
-    Collider m_Collider;
-    Vector3 m_Center;
-    Vector3 m_Size, m_Min, m_Max;
+    public GameObject Player;
+    public Vector3 offset;
+    transfrom asd
 
     void Start()
     {
-        //Fetch the Collider from the GameObject
-        m_Collider = GetComponent<Collider>();
-        //Fetch the center of the Collider volume
-        m_Center = m_Collider.bounds.center;
-        //Fetch the size of the Collider volume
-        m_Size = m_Collider.bounds.size;
-        //Fetch the minimum and maximum bounds of the Collider volume
-        m_Min = m_Collider.bounds.min;
-        m_Max = m_Collider.bounds.max;
-        //Output this data into the console
-        OutputData();
+   
     }
 
-    void OutputData()
+void Update()
     {
-        //Output to the console the center and size of the Collider volume
-        Debug.Log("Collider Center : " + m_Center);
-        Debug.Log("Collider Size : " + m_Size);
-        Debug.Log("Collider bound Minimum : " + m_Min);
-        Debug.Log("Collider bound Maximum : " + m_Max);
+      transform.position = Player.transform.position + offset;
+      faceMouse();  
+       
     }
+
+void faceMouse()
+    {
+        Vector3 mouseposition = Input.mousePosition;
+        mouseposition = Camera.main.ScreenToWorldPoint(mouseposition);
+
+        Vector2 direction = new Vector2()
+    }
+
 }
