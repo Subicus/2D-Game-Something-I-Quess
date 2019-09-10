@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 809459584}
   - component: {fileID: 809459583}
   - component: {fileID: 809459582}
+  - component: {fileID: 809459588}
   - component: {fileID: 809459587}
   - component: {fileID: 809459586}
   m_Layer: 0
@@ -368,7 +369,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  swordDistance: 2
+  swordDistance: 2.7
+--- !u!114 &809459588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809459581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da87344d8043554ca3ac7c98c07de0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1541266449}
+  offset: {x: 2, y: 0, z: 0}
+  swordDistance: 1
 --- !u!1 &1173757093
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +709,6 @@ GameObject:
   - component: {fileID: 1541266453}
   - component: {fileID: 1541266452}
   - component: {fileID: 1541266455}
-  - component: {fileID: 1541266451}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -701,20 +716,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1541266451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541266449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8da87344d8043554ca3ac7c98c07de0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 809459581}
-  offset: {x: 1.5, y: 0, z: 0}
 --- !u!23 &1541266452
 MeshRenderer:
   m_ObjectHideFlags: 0
