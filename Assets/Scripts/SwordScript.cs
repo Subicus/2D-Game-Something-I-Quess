@@ -7,26 +7,17 @@ public class SwordScript : MonoBehaviour
 {
     public GameObject Player;
     public Vector3 offset;
-    transfrom asd
 
     void Start()
     {
-   
+
     }
 
-void Update()
+    void Update()
     {
-      transform.position = Player.transform.position + offset;
-      faceMouse();  
-       
+        transform.position = Player.transform.position + offset;
+
     }
 
-void faceMouse()
-    {
-        Vector3 mouseposition = Input.mousePosition;
-        mouseposition = Camera.main.ScreenToWorldPoint(mouseposition);
-
-        Vector2 direction = new Vector2()
-    }
-
+    
 }

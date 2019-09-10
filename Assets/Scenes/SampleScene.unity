@@ -368,6 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  swordDistance: 2
 --- !u!1 &1173757093
 GameObject:
   m_ObjectHideFlags: 0

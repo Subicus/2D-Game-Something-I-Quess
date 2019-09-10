@@ -5,30 +5,41 @@ using UnityEngine;
 public class PlayerMovment : MonoBehaviour
 {
 
-    public float speed;                //Floating point variable to store the player's movement speed.
+    public float speed;
+    public float swordDistance = 1;
+    private Rigidbody2D rb2d;        
 
-    private Rigidbody2D rb2d;        //Store a reference to the Rigidbody2D component required to use 2D Physics.
 
-    // Use this for initialization
     void Start()
     {
-        //Get and store a reference to the Rigidbody2D component so that we can access it.
         rb2d = GetComponent<Rigidbody2D>();
     }
-
-    //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
-    void FixedUpdate()
+    void Update()
     {
-        //Store the current horizontal input in the float moveHorizontal.
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 characterPos = transform.position;
+        Vector2 dir = mousePos - characterPos;
+        dir = dir.normalized;
+        Vector2 swordPos = characterPos + swordDistance * dir;
+
         float moveHorizontal = Input.GetAxis("Horizontal");
-
-        //Store the current vertical input in the float moveVertical.
         float moveVertical = Input.GetAxis("Vertical");
-
-        //Use the two store floats to create a new Vector2 variable movement.
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-
-        //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
         rb2d.AddForce(movement * speed);
     }
+
+   /// void OnDrawGizmos()
+ ///   {
+ ///       if (!Application.isPlaying) return;
+ ///       Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+ ///       Vector2 characterPos = transform.position;
+ ///      Gizmos.DrawSphere(mousePos, 1);
+ ///       Vector2 dir = mousePos - characterPos;
+ ///       dir = dir.normalized;
+ ///      Vector2 swordPos = characterPos + swordDistance*dir;
+ ///       Gizmos.DrawLine(characterPos, swordPos);
+ ///   }
+
+
+
 }
